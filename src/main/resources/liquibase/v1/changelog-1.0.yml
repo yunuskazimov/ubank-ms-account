@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create Account table
+      author: Yunus Kazimov
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  name: account_id
+                  type: varchar(128)
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    unique: true
+                    nullable: true
+              - column:
+                  name: amount
+                  type: numeric(19,6)
+              - column:
+                  name: currency_type
+                  type: varchar(32)
+              - column:
+                  name: status
+                  type: varchar(32)
+              - column:
+                  name: customer_pin
+                  type: varchar(32)
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
+            schemaName: public
+            tableName: accounts
