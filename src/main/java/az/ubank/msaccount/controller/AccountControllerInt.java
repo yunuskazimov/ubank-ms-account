@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class AccountControllerInt {
     private final AccountService service;
 
-    @GetMapping("/id/{uuid}")
+    @GetMapping("/{uuid}/id/")
     @ResponseStatus(HttpStatus.OK)
     public AccountResponseDto getAccountsByUUID(@PathVariable String uuid) {
         log.info("controller int getAccountsByUUID started");
