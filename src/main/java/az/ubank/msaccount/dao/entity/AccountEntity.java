@@ -2,16 +2,18 @@ package az.ubank.msaccount.dao.entity;
 
 import az.ubank.msaccount.enums.CurrencyType;
 import az.ubank.msaccount.enums.Status;
-import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
-
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 @Entity
 @Table(name = "accounts")
 public class AccountEntity {
@@ -21,6 +23,7 @@ public class AccountEntity {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     @Column(updatable = false, nullable = false)
     private String accountId;
+
     private String customerPin;
     private BigDecimal amount;
 
