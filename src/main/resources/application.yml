@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    username: ${ACCOUNT_USERNAME}
+    password: ${ACCOUNT_PASSWORD}
+    url: ${ACCOUNT_URL}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    generate-ddl: false
+    properties:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yml
+    enabled: true
+
+server:
+  port: ${ACCOUNT_PORT}
+
+
